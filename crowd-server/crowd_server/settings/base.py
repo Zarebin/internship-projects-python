@@ -37,7 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'crowd_server.apps.image_label'
+    'crowd_server.apps.image_label',
+    'crowd_server.apps.sentiment',
 ]
 
 MIDDLEWARE = [
