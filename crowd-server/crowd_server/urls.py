@@ -21,5 +21,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('image-label/', include('crowd_server.apps.image_label.urls')),
     path('sentiment/', include('crowd_server.apps.sentiment.urls')),
+    path('food_compare/', include('crowd_server.apps.food_compare.urls')),
 
 ]

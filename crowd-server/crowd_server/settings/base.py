@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'crowd_server.apps.image_label',
     'crowd_server.apps.sentiment',
+    'crowd_server.apps.food_compare',
 ]
 
 MIDDLEWARE = [
