@@ -1,5 +1,7 @@
+from email.policy import default
 from django.db import models
 from django.contrib.auth import get_user_model
+from django.core.validators import MaxValueValidator
 
 # Create your models here.
 
@@ -11,7 +13,8 @@ class CompareQuestion(models.Model):
     top_img_url = models.ImageField()
     bottom_img_url = models.ImageField()
     question = models.TextField()
-
+    response_count = models.IntegerField(default=0,validators=[MaxValueValidator(3)])
+    
 
     def __str__(self):
         return self.question
