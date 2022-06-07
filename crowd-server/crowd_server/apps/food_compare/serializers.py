@@ -1,6 +1,6 @@
 from rest_framework import serializers
 from .models import CompareQuestion,Comparison
-from django.db.models import F
+
 
 class CompareQuestionSerializer(serializers.ModelSerializer):
     class Meta:
@@ -17,6 +17,6 @@ class ComparisonSerializer(serializers.ModelSerializer):
     def create(self, validated_data):
         question_content = validated_data['question']
         question = CompareQuestion.objects.get(id = question_content.id)
-        question.response_count = F('response_count') + 1
+        question.response_count += 1
         question.save()
         return Comparison(**validated_data)
