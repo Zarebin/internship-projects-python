@@ -6,10 +6,12 @@ from rest_framework.views import APIView
 from rest_framework.viewsets import ModelViewSet,GenericViewSet
 from .models import Question, EvaluatedSentiment
 from .serializers import QuestionSerializer, EvaluatedSentimentSerializer
+from rest_framework.permissions import IsAuthenticated
 
 
-# Create your views here.
+
 class SentimentAPI(GenericViewSet):
+    permission_classes = [IsAuthenticated]
 
     def get_queryset(self):
         if self.action == "create":
