@@ -1,6 +1,7 @@
 from django.urls import path
-from .views import test
+from .views import ImageViewAPI, ImageCategoryView
 
 urlpatterns = [
-    path('test/', test, name="test")
+    path('categories/', ImageCategoryView.as_view()),
+    path('image/', ImageViewAPI.as_view())
 ]
