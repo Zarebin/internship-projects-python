@@ -1,13 +1,10 @@
-from django.shortcuts import render
 from rest_framework import status, viewsets
 from rest_framework.generics import get_object_or_404
 from rest_framework.response import Response
-from rest_framework.views import APIView
 from rest_framework.viewsets import ModelViewSet,GenericViewSet
 from .models import Question, EvaluatedSentiment
 from .serializers import QuestionSerializer, EvaluatedSentimentSerializer
 from rest_framework.permissions import IsAuthenticated
-
 
 
 class SentimentAPI(GenericViewSet):
@@ -49,21 +46,5 @@ class SentimentAPI(GenericViewSet):
         return Response(serializer.data)
 
 
-class SentimentAPI2(APIView):
-
-    def get(self, request):
-        queryset = Question.objects.filter(number_of_answers__lt=3)
-        question = get_object_or_404(queryset, pk=request.data['id'])
-        serializer = QuestionSerializer(question)
-        return Response(serializer.data)
-
-    def post(self, request):
-        serializer = EvaluatedSentimentSerializer(data=request.data)
-        serializer.is_valid(raise_exception=True)
-        question = Question.objects.get(id=request.data['question'])
-        question.number_of_answers += 1
-        question.save()
-        serializer.save()
-        return Response(serializer.data, status=status.HTTP_201_CREATED)
 
 
