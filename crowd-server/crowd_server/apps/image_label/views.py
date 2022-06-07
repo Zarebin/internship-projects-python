@@ -16,7 +16,7 @@ class ImageCategoryView(APIView):
         return Response(serializer.data)
 
 
-class ImageView(APIView):
+class ImageViewAPI(APIView):
     permission_classes = [IsAuthenticated]
 
     def get(self, request):
@@ -24,12 +24,9 @@ class ImageView(APIView):
         serializer = ImageSerializer(image)
         return Response(serializer.data)
 
-
-class ImageLabelView(APIView):
-    permission_classes = [IsAuthenticated]
-
     def post(self, request):
         serializer = ImageLabelSerializer(data=request.data)
         serializer.is_valid(raise_exception=True)
         serializer.save()
-        return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.data, status=status.HTTP_201_CREATED)    
+ 
