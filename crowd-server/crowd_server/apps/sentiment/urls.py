@@ -1,6 +1,8 @@
-from django.urls import path
-from .views import test
+from django.urls import path, include
+from .views import SentimentAPI
+from rest_framework.routers import DefaultRouter
 
-urlpatterns = [
-    path('test/', test, name="test")
-]
+router = DefaultRouter()
+router.register(r'api', SentimentAPI, basename="api")
+
+urlpatterns = router.urls
