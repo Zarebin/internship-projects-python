@@ -41,7 +41,8 @@ INSTALLED_APPS = [
     'crowd_server.apps.food_compare',
     'crowd_server.apps.image_label',
     'crowd_server.apps.sentiment',
-    'rest_framework'
+    'crowd_server.apps.food_label',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
