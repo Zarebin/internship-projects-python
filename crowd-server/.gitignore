@@ -1,6 +1,7 @@
 
-# Created by https://www.toptal.com/developers/gitignore/api/python,django,pycharm,visualstudiocode
-# Edit at https://www.toptal.com/developers/gitignore?templates=python,django,pycharm,visualstudiocode
+
+# Created by https://www.toptal.com/developers/gitignore/api/python,pycharm,django,visualstudiocode
+# Edit at https://www.toptal.com/developers/gitignore?templates=python,pycharm,django,visualstudiocode
 
 ### Django ###
 *.log
@@ -391,6 +392,8 @@ fabric.properties
 
 # Ignore code-workspaces
 *.code-workspace
+
+# End of https://www.toptal.com/developers/gitignore/api/python,pycharm,django,visualstudiocode
 
 # End of https://www.toptal.com/developers/gitignore/api/python,django,pycharm,visualstudiocode
 
