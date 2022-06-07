@@ -7,9 +7,6 @@ class QuestionSerializer(serializers.ModelSerializer):
         model = Question
         fields = ['text', 'language', 'number_of_answers']
 
-    def create(self, validated_data):
-        return Question(**validated_data)
-
 
 class EvaluatedSentimentSerializer(serializers.ModelSerializer):
     class Meta:
