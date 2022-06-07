@@ -1,4 +1,5 @@
 
+
 # Created by https://www.toptal.com/developers/gitignore/api/python,pycharm,django,visualstudiocode
 # Edit at https://www.toptal.com/developers/gitignore?templates=python,pycharm,django,visualstudiocode
 
@@ -393,3 +394,7 @@ fabric.properties
 *.code-workspace
 
 # End of https://www.toptal.com/developers/gitignore/api/python,pycharm,django,visualstudiocode
+
+# End of https://www.toptal.com/developers/gitignore/api/python,django,pycharm,visualstudiocode
+
+Pipfile
