@@ -1,7 +1,7 @@
 from email.policy import default
 from django.db import models
 from django.contrib.auth import get_user_model
-from django.core.validators import MaxValueValidator
+
 
 # Create your models here.
 
@@ -13,7 +13,7 @@ class CompareQuestion(models.Model):
     top_img_url = models.ImageField()
     bottom_img_url = models.ImageField()
     question = models.TextField()
-    response_count = models.IntegerField(default=0,validators=[MaxValueValidator(3)])
+    response_count = models.PositiveIntegerField(default=0)
     
 
     def __str__(self):
@@ -22,13 +22,13 @@ class CompareQuestion(models.Model):
 class Comparison(models.Model):
 
     RESPONSE_CHOICE = (
-            ('0','Top'),
-            ('1', 'Bottom'),
-            ('2', 'Similar'),
-            ('3', 'Skip'),
+            ('top','Top'),
+            ('bottom', 'Bottom'),
+            ('similar', 'Similar'),
+            ('skip', 'Skip'),
         )
-    response = models.CharField(max_length=2,choices=RESPONSE_CHOICE)
-    question = models.ForeignKey(CompareQuestion, on_delete=models.CASCADE, related_name='Comparison')
-    user = models.ForeignKey(User,on_delete=models.CASCADE,related_name='Comparison')
+    response = models.CharField(max_length=7,choices=RESPONSE_CHOICE)
+    question = models.ForeignKey(CompareQuestion, on_delete=models.CASCADE, related_name='comparison')
+    user = models.ForeignKey(User,on_delete=models.CASCADE,related_name='comparison')
     
 

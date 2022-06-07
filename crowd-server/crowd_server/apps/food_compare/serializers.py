@@ -7,9 +7,6 @@ class CompareQuestionSerializer(serializers.ModelSerializer):
         model = CompareQuestion
         fields = ("language","question","response_count")
 
-    def create(self, validated_data):
-        return CompareQuestion(**validated_data)
-
 
 class ComparisonSerializer(serializers.ModelSerializer):
     
@@ -19,8 +16,7 @@ class ComparisonSerializer(serializers.ModelSerializer):
 
     def create(self, validated_data):
         question_content = validated_data['question']
-        print(question_content)
-        question = CompareQuestion.objects.get(question = question_content)
+        question = CompareQuestion.objects.get(id = question_content.id)
         question.response_count = F('response_count') + 1
         question.save()
         return Comparison(**validated_data)
