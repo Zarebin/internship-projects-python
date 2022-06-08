@@ -20,6 +20,7 @@ class UserInSerialiser(serializers.Serializer):
 
 class UserOutSerialiser(serializers.Serializer):
 
-    user_id = serializers.CharField(required=True,read_only=True)
+    user = serializers.CharField(required=True,)
     response = serializers.CharField(required=True)
+    qustion = serializers.CharField(required=True)
 
