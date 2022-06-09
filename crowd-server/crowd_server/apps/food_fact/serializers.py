@@ -1,26 +1,20 @@
 from rest_framework import serializers
 
 
-class UserInSerialiser(serializers.Serializer):
+class FoodQuestionSerialiser(serializers.Serializer):
     
-    question_id = serializers.CharField (required=True,write_only=True)         #if write_only = True : Never show in response 
-    question = serializers.CharField (required=True,)
-    image_url = serializers.ImageField (required=True,)
-    language = serializers.CharField (required=True,)
+    question = serializers.CharField ()
+    image_url = serializers.ImageField ()
+    language = serializers.CharField ()
+    response_count = serializers.IntegerField ()         #if write_only = True : Never show in response 
 
-    def validate(self,data):
-
-        value = data['language']
-        if value != 'fa' or value != 'en' :
-
-            raise serializers.ValidationError ('your language must be fa(Persian) or en(English)')
-
-        return data
+    
 
 
-class UserOutSerialiser(serializers.Serializer):
+class FoodResponseSerialiser(serializers.Serializer):
 
     user = serializers.CharField(required=True,)
     response = serializers.CharField(required=True)
     qustion = serializers.CharField(required=True)
+    
 
