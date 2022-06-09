@@ -39,10 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'crowd_server.apps.food_compare',
-    'crowd_server.apps.image_label',
-    'crowd_server.apps.sentiment',
-    'crowd_server.apps.food_label',
-    'rest_framework',
+    'food_fact'
 ]
 
 MIDDLEWARE = [
