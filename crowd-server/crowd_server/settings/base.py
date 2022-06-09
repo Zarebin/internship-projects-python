@@ -26,7 +26,8 @@ SECRET_KEY = 'django-insecure-k^ao8b3#05tp))$d^@t5342#+4k4t=v&cf-=v1w3u1+w#u5p(v
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -42,6 +43,8 @@ INSTALLED_APPS = [
     'crowd_server.apps.image_label',
     'crowd_server.apps.sentiment',
     'crowd_server.apps.food_label',
+    # 'foodlabel',
+    'crowd_server.apps.foodlabel'
     'rest_framework',
 ]
 
