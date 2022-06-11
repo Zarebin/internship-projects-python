@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import *
+from .models import Question,Response
 
 
 class QuestionSerialiser(serializers.ModelSerializer):
@@ -8,7 +8,7 @@ class QuestionSerialiser(serializers.ModelSerializer):
     class Meta:
         
         model = Question
-        fields = ['id','language','img_url' ,'question','response_count']        # ->['language','img_url' ,'question','response_count']
+        fields = ['language','img_url' ,'question','response_count']        # -> feilds : ['language','img_url' ,'question','response_count']
 
    
 
@@ -19,11 +19,11 @@ class ResponseSerializer(serializers.ModelSerializer):
         model = Response
         fields = '__all__'          # ->[ user, response, question ]
 
-        # extra_kwargs={
-        # 'user' : {'require':True},
-        # 'response' : {'require':True},
-        # 'question' : {'require':True},
-        # }
+        extra_kwargs={
+        'user' : {'require':True},
+        'response' : {'require':True},
+        'question' : {'require':True},
+        }
         
         
     def create(self, validated_data):
