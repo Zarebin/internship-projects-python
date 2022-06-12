@@ -14,7 +14,6 @@ class QuestionView(APIView):
         question = Question.objects.all()
         srz_data = QuestionSerialiser(instance=question,many =True)       
 
-
         return JsonResponse({'data':srz_data.data},status=status.HTTP_202_ACCEPTED )   #,status.HTTP_202_ACCEPTED   
 
       
