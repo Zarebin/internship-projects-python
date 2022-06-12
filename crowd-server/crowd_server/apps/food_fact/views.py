@@ -1,7 +1,7 @@
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from .models import Question,Response
-from .serializers import QuestionSerialiser,ResponseSerializer
+from .serializers import QuestionSerializer,ResponseSerializer
 from rest_framework import status
 from django.http import JsonResponse
 
@@ -12,7 +12,7 @@ class QuestionView(APIView):
 
         '''The values we send from the user'''
         question = Question.objects.all()
-        srz_data = QuestionSerialiser(instance=question,many =True)       
+        srz_data = QuestionSerializer(instance=question,many =True)       
 
         return JsonResponse({'data':srz_data.data},status=status.HTTP_202_ACCEPTED )   #,status.HTTP_202_ACCEPTED   
 
