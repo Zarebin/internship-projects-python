@@ -26,9 +26,9 @@ class ResponseModel(models.Model):
             ('2', 'Not Sure'),
             ('3', 'Skip') )
 
-    user = models.ForeignKey(User,on_delete=models.CASCADE, related_name='Response',blank=True)
+    user = models.ForeignKey(User,on_delete=models.CASCADE, related_name='Response',)
     response = models.CharField(max_length=2,choices = USER_CHOISE)
-    question = models.ForeignKey(QuestionModel, on_delete=models.CASCADE, related_name='Response',default=1)
+    question = models.ForeignKey(QuestionModel, on_delete=models.CASCADE, related_name='Response',)
 
     
     
