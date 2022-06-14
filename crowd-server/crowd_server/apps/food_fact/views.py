@@ -21,7 +21,7 @@ class QuestionView(APIView):
     def post (self,request):
 
         '''The values get to the user'''
-        srz_data= ResponseSerializer(data=request.POST)
+        srz_data= ResponseSerializer(data=request.data)
 
         '''If the user's answer is correct and without any problems, it will be saved'''
         if srz_data.is_valid():
