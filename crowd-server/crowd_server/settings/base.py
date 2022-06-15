@@ -43,7 +43,7 @@ INSTALLED_APPS = [
     'crowd_server.apps.sentiment',
     'crowd_server.apps.food_label',
     'rest_framework',
-    'crowd_server.apps.food_fact_API'
+    'crowd_server.apps.food_fact'
 
 ]
 
