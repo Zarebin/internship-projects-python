@@ -25,4 +25,6 @@ urlpatterns = [
     path('sentiment/', include('crowd_server.apps.sentiment.urls')),
     path('food_label/', include('crowd_server.apps.food_label.urls')),
     path('food_compare/', include('crowd_server.apps.food_compare.urls')),
-]
+    path('auth/', include('djoser.urls')),
+    path('auth/', include('djoser.urls.jwt')),
+]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
