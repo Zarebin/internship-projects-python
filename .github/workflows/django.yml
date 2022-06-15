@@ -27,4 +27,4 @@ jobs:
         pip install -r crowd-server/requirements/production.txt
     - name: Run Tests
       run: |
-        python manage.py test
+        python crowd-server/manage.py test
