@@ -3,22 +3,14 @@ from django.shortcuts import get_object_or_404
 from rest_framework import status
 from rest_framework.response import Response
 from rest_framework.viewsets import GenericViewSet
-from rest_framework.mixins import CreateModelMixin,RetrieveModelMixin,UpdateModelMixin
 from rest_framework.permissions import IsAuthenticated
 
 
 from .models import Comparison,CompareQuestion,Profile
-from .serializers import ComparisonSerializer,CompareQuestionSerializer,ProfileSerializer
+from .serializers import ComparisonSerializer,CompareQuestionSerializer
 
 def test(request):
     return JsonResponse({'message': 'food compare'})
-
-
-class ProfileAPI(CreateModelMixin,RetrieveModelMixin,UpdateModelMixin,GenericViewSet):
-   
-    permission_classes = [IsAuthenticated] 
-    queryset = Profile.objects.all()
-    serializer_class = ProfileSerializer
 
 
 class CompareFoodAPI(GenericViewSet):

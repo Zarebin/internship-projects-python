@@ -2,7 +2,7 @@ from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin
 from .models import User
 
-# Register your models here.
+# # Register your models here.
 
 class customUserAdmin(UserAdmin):
     list_display = (
