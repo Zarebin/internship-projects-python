@@ -1,17 +1,17 @@
 from rest_framework import serializers
-from .models import ImageCategory, ImageLabel, Image
+from .models import Category, ImageLabel, Image
 
 
 class ImageCategorySerializer(serializers.ModelSerializer):
     class Meta:
-        model = ImageCategory
-        fields = ['name', 'question', 'image_path']
+        model = Category
+        fields = ['id','name', 'question', 'image_path']
 
 
 class ImageSerializer(serializers.ModelSerializer):
     class Meta:
         model = Image
-        fields = ['image_category', 'path', 'answer_count']
+        fields = ['id','category', 'path', 'answer_count']
 
 
 class ImageLabelSerializer(serializers.ModelSerializer):
