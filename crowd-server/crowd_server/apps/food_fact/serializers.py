@@ -1,12 +1,12 @@
 from rest_framework import serializers
-from .models import QuestionModel,ResponseModel
+from .models import Question,ResponseModel
 
 
 class QuestionSerializer(serializers.ModelSerializer):
 
     class Meta:
     
-        model = QuestionModel
+        model = Question
         fields = ['language','img_url' ,'question','response_count']       
 
 class ResponseSerializer(serializers.ModelSerializer):

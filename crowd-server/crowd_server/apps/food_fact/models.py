@@ -4,7 +4,7 @@ from django.contrib.auth import get_user_model
 User = get_user_model()
 
 
-class QuestionModel(models.Model):
+class Question(models.Model):
 
     '''The values we send from the user'''
     id = models.AutoField(blank=False, primary_key=True)
@@ -28,7 +28,7 @@ class ResponseModel(models.Model):
 
     user = models.ForeignKey(User,on_delete=models.CASCADE, related_name='Response',)
     response = models.CharField(max_length=2,choices = USER_CHOISE)
-    question = models.ForeignKey(QuestionModel, on_delete=models.CASCADE, related_name='Response',)
+    question = models.ForeignKey(Question, on_delete=models.CASCADE, related_name='Response',)
 
     
     
