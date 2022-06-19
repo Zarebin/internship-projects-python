@@ -30,5 +30,3 @@ class answer(models.Model):
     response = models.CharField(max_length=2,choices = USER_CHOISE)
     question = models.ForeignKey(Question, on_delete=models.CASCADE, related_name='Response',)
 
-    
-    

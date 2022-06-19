@@ -32,10 +32,4 @@ class QuestionView(APIView):
         return Response(srz_data.errors,status=status.HTTP_400_BAD_REQUEST)  
   
 
-  
-
-
-
-
-
-
+ 

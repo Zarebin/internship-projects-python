@@ -27,3 +27,4 @@ urlpatterns = [
     path('food_compare/', include('crowd_server.apps.food_compare.urls')),
     path('food_fact/', include ('crowd_server.apps.food_fact.urls'))
     ]
+
