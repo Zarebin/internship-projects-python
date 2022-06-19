@@ -21,6 +21,7 @@ class ImageLabelSerializer(serializers.ModelSerializer):
 
     def create(self, validated_data):
         image = validated_data['image']
+        #FIXME : counter add if imagelabel answer is yes or no
         image.answer_count += 1
         image.save()
         return ImageLabel.objects.create(**validated_data)    

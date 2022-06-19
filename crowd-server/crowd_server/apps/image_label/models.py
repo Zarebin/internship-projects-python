@@ -19,6 +19,7 @@ class Image(models.Model):
     image_category = models.ForeignKey(ImageCategory, on_delete=models.CASCADE, related_name='images')
     path = models.ImageField()
     answer_count = models.PositiveIntegerField(default=0)
+    verified = models.BooleanField(null=True,default=None)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
@@ -41,3 +42,13 @@ class ImageLabel(models.Model):
 
     def __str__(self):
         return f"{self.user.username} - {self.answer}"
+
+
+class UserScore(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='user')
+    value = models.SmallIntegerField(null=False,default=0)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return f"score = {self.value}"

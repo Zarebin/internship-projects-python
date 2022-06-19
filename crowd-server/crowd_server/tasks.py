@@ -9,6 +9,7 @@ logger = get_task_logger(__name__)
 
 @shared_task
 def sample_task():
+
     logger.info("The sample task just ran.")
 
 @shared_task
