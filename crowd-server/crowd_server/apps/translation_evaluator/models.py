@@ -17,7 +17,6 @@ class EvaluatedTranslation(models.Model):
     class Answer(models.IntegerChoices):
         YES = 0
         NO = 1
-        NOT_SURE = 2
         SKIPPED = 3
 
     question = models.ForeignKey(Question, related_name='evaluated_translation', on_delete=models.CASCADE)
