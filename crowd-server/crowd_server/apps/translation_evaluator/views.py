@@ -34,8 +34,8 @@ class translateAPI(GenericViewSet):
         queryset = self.get_queryset()
         question = get_object_or_404(queryset, pk=pk)
         serializer = self.get_serializer(question)
-        response = Response(serializer.data, status=status.HTTP_200_OK)
-        return response
+        return Response(serializer.data, status=status.HTTP_200_OK)
+         
 
     def create(self, request, *args, **kwargs):
         serializer = self.get_serializer(data= request.data)
