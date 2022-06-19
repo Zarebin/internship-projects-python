@@ -44,6 +44,8 @@ INSTALLED_APPS = [
     'crowd_server.apps.food_label',
     'crowd_server.apps.translationEvaluator',
     'rest_framework',
+    'crowd_server.apps.food_fact'
+
 ]
 
 MIDDLEWARE = [
