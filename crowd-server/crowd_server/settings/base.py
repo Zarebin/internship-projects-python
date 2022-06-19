@@ -44,9 +44,9 @@ INSTALLED_APPS = [
     'crowd_server.apps.food_label',
     'crowd_server.apps.translation_evaluator',
     'rest_framework',
-    'crowd_server.apps.food_fact'
+    'crowd_server.apps.food_fact',
+    ] 
 
-]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

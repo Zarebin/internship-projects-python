@@ -1,7 +1,9 @@
 from django.urls import path
-from .views import test
+from .views import QuestionView
+
 
 urlpatterns = [
-    path('test/', test, name="test")
+    path('question/',QuestionView.as_view())
 ]
+
 

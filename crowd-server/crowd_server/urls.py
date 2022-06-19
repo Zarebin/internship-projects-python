@@ -28,3 +28,4 @@ urlpatterns = [
     path('translation_evaluator/', include('crowd_server.apps.translation_evaluator.urls')),
     path('food_fact/', include('crowd_server.apps.food_fact.urls')),
 ]
+
