@@ -42,7 +42,7 @@ INSTALLED_APPS = [
     'crowd_server.apps.image_label',
     'crowd_server.apps.sentiment',
     'crowd_server.apps.food_label',
-    'crowd_server.apps.translationEvaluator',
+    'crowd_server.apps.translation_evaluator',
     'rest_framework',
     'crowd_server.apps.food_fact'
 

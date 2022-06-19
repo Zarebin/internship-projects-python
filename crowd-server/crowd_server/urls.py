@@ -25,6 +25,6 @@ urlpatterns = [
     path('sentiment/', include('crowd_server.apps.sentiment.urls')),
     path('food_label/', include('crowd_server.apps.food_label.urls')),
     path('food_compare/', include('crowd_server.apps.food_compare.urls')),
-    path('translationEvaluator/', include('crowd_server.apps.translationEvaluator.urls')),
+    path('translation_evaluator/', include('crowd_server.apps.translation_evaluator.urls')),
     path('food_fact/', include('crowd_server.apps.food_fact.urls')),
 ]

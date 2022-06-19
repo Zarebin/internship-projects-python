@@ -10,15 +10,24 @@ class Question(models.Model):
     number_of_sent_answers = models.PositiveIntegerField(default=0)
 
     def __str__(self):
-        return self.question_text#,self.answer_text
+        return f"Question:{self.question_text},Answer:{self.answer_text}"
 
 
-previous = "previous"
+    question_text = models.TextField()
+    answer_text = models.TextField()
+    language = models.CharField(max_length=20)
+    number_of_sent_answers = models.PositiveIntegerField(default=0)
+
+    def __str__(self):
+
+        return f"Question:{self.question_text},Answer:{self.answer_text}"
+
+
+
 Skip ="skip"
 true="true"
 false="false"
 ANSWER_CHOICES = (
-    (previous, "previous"),
     (Skip, "skip"),
     (true, "true"),
     (false, "false")
