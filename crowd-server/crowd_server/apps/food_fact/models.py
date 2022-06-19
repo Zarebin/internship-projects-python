@@ -17,7 +17,7 @@ class Question(models.Model):
         return f' {self.id}'
 
 
-class answer(models.Model):
+class Answer(models.Model):
     '''The values get to the user'''
 
     USER_CHOISE = (                                         
