@@ -9,7 +9,7 @@ class QuestionSerializer(serializers.ModelSerializer):
         model = Question
         fields = ['language','img_url' ,'question','response_count']       
 
-class ResponseSerializer(serializers.ModelSerializer):
+class AnswerSerializer(serializers.ModelSerializer):
     
     class Meta:
         model = Answer

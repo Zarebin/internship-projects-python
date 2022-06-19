@@ -1,7 +1,7 @@
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from .models import Question
-from .serializers import QuestionSerializer,ResponseSerializer
+from .serializers import QuestionSerializer,AnswerSerializer
 from rest_framework import status
 
 
@@ -21,7 +21,7 @@ class QuestionView(APIView):
     def post (self,request):
 
         '''The values get to the user'''
-        srz_data= ResponseSerializer(data=request.data)
+        srz_data= AnswerSerializer(data=request.data)
 
         '''If the user's answer is correct and without any problems, it will be saved'''
         if srz_data.is_valid():
