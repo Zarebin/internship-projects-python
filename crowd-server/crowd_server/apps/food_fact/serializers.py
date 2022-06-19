@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Question,ResponseModel
+from .models import Question,answer
 
 
 class QuestionSerializer(serializers.ModelSerializer):
@@ -12,7 +12,7 @@ class QuestionSerializer(serializers.ModelSerializer):
 class ResponseSerializer(serializers.ModelSerializer):
     
     class Meta:
-        model = ResponseModel
+        model = answer
         fields = '__all__'         
 
     def create(self, validated_data):
@@ -20,4 +20,4 @@ class ResponseSerializer(serializers.ModelSerializer):
         question = validated_data['question']
         question.response_count += 1                       
         question.save()
-        return  ResponseModel.objects.create(**validated_data)        
+        return  answer.objects.create(**validated_data)        
