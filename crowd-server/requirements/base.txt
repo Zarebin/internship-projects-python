@@ -5,4 +5,5 @@ Pillow==9.1.1
 psycopg2==2.9.3
 pytz==2022.1
 sqlparse==0.4.2
-
+djangorestframework-simplejwt==5.2.0
+pyjwt==2.4.0

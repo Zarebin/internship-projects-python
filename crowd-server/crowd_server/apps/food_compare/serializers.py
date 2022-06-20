@@ -5,7 +5,7 @@ from .models import CompareQuestion,Comparison
 class CompareQuestionSerializer(serializers.ModelSerializer):
     class Meta:
         model = CompareQuestion
-        fields = ("language","question","response_count")
+        fields = ("id","question","top_img_url","bottom_img_url")
 
 
 class ComparisonSerializer(serializers.ModelSerializer):
