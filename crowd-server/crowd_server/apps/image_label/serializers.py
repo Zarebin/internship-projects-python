@@ -1,10 +1,10 @@
 from rest_framework import serializers
-from .models import ImageCategory, ImageLabel, Image
+from .models import Category, UserAnswer, Image
 
 
 class ImageCategorySerializer(serializers.ModelSerializer):
     class Meta:
-        model = ImageCategory
+        model = Category
         fields = ['name', 'question', 'image_path']
 
 
@@ -16,7 +16,7 @@ class ImageSerializer(serializers.ModelSerializer):
 
 class ImageLabelSerializer(serializers.ModelSerializer):
     class Meta:
-        model = ImageLabel
+        model = UserAnswer
         fields = ['user', 'image', 'answer']
 
     def create(self, validated_data):
@@ -24,4 +24,4 @@ class ImageLabelSerializer(serializers.ModelSerializer):
         #FIXME : counter add if imagelabel answer is yes or no
         image.answer_count += 1
         image.save()
-        return ImageLabel.objects.create(**validated_data)    
+        return UserAnswer.objects.create(**validated_data)    

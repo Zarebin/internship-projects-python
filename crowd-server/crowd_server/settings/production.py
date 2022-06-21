@@ -1,6 +1,6 @@
 from .base import *
 from celery.schedules import crontab
-import crowd_server.tasks
+import crowd_server.apps.image_label.tasks
 
 INSTALLED_APPS += ["django_celery_beat"]
 CELERY_BROKER_URL = "redis://redis:6379"
