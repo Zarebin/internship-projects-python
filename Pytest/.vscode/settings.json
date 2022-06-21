@@ -1,0 +1,5 @@
+{
+    "python.analysis.extraPaths": [
+        "./pytest_project/pytest_project/pytest_sample"
+    ]
+}
