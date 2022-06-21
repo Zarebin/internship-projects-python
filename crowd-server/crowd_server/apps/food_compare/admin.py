@@ -1,3 +1,6 @@
 from django.contrib import admin
 
-# Register your models here.
+from .models import Question,CompareQuestion
+
+admin.site.register(Question)
+admin.site.register(CompareQuestion)

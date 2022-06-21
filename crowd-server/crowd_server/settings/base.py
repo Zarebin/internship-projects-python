@@ -45,8 +45,21 @@ INSTALLED_APPS = [
     'crowd_server.apps.translation_evaluator',
     'rest_framework',
     'crowd_server.apps.food_fact',
+    'crowd_server.apps.food_compare.apps.UserConfig',
+    'crowd_server.apps.image_label.apps.UserConfig',
+    'crowd_server.apps.sentiment.apps.UserConfig',
+    'crowd_server.apps.food_label.apps.UserConfig',
+    'crowd_server.apps.translation_evaluator.apps.UserConfig',
+    'crowd_server.apps.food_fact.apps.UserConfig'
     ] 
-
+AUTH_USER_MODEL = [
+    'crowd_server.apps.food_compare',
+    'crowd_server.apps.image_label',
+    'crowd_server.apps.sentiment',
+    'crowd_server.apps.food_label',
+    'crowd_server.apps.translation_evaluator',
+    'crowd_server.apps.food_fact' 
+]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
