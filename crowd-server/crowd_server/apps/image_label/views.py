@@ -4,14 +4,14 @@ from rest_framework.views import APIView
 from rest_framework import status
 
 from .serializers import ImageSerializer, ImageLabelSerializer, ImageCategorySerializer
-from .models import ImageCategory, Image
+from .models import Category, Image
 
 
 class ImageCategoryView(APIView):
     permission_classes = [IsAuthenticated]
 
     def get(self, request):
-        categories = ImageCategory.objects.all()
+        categories = Category.objects.all()
         serializer = ImageCategorySerializer(categories, many=True)
         return Response(serializer.data)
 
