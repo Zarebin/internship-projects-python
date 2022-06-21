@@ -4,15 +4,16 @@ from rest_framework.views import APIView
 from rest_framework import status
 
 from .serializers import ImageSerializer, ImageLabelSerializer, ImageCategorySerializer
-from .models import ImageCategory, Image
+from .models import Category, Image, ImageLabel
 
 
 class ImageCategoryView(APIView):
     permission_classes = [IsAuthenticated]
 
     def get(self, request):
-        categories = ImageCategory.objects.all()
+        categories = Category.objects.all()
         serializer = ImageCategorySerializer(categories, many=True)
+
         return Response(serializer.data)
 
 
@@ -20,7 +21,8 @@ class ImageViewAPI(APIView):
     permission_classes = [IsAuthenticated]
 
     def get(self, request):
-        image = Image.objects.filter(answer_count__lt=3).last()
+        image_labels = ImageLabel.objects.filter(user_id = self.request.user.id).values('image_id')
+        image = Image.objects.filter(answer_count__lt=3).exclude(id__in=image_labels).order_by('-answer_count').first()
         serializer = ImageSerializer(image)
         return Response(serializer.data)
 
@@ -28,5 +30,4 @@ class ImageViewAPI(APIView):
         serializer = ImageLabelSerializer(data=request.data)
         serializer.is_valid(raise_exception=True)
         serializer.save()
-        return Response(serializer.data, status=status.HTTP_201_CREATED)    
- 
+        return Response(serializer.data, status=status.HTTP_201_CREATED)  

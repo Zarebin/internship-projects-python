@@ -4,7 +4,7 @@ from django.contrib.auth import get_user_model
 
 User = get_user_model()
 
-class ImageCategory(models.Model):
+class Category(models.Model):
     name = models.CharField(max_length=255)
     question = models.TextField()
     image_path = models.ImageField()
@@ -16,9 +16,10 @@ class ImageCategory(models.Model):
 
 
 class Image(models.Model):
-    image_category = models.ForeignKey(ImageCategory, on_delete=models.CASCADE, related_name='images')
+    category = models.ForeignKey(Category, on_delete=models.CASCADE, related_name='images')
     path = models.ImageField()
     answer_count = models.PositiveIntegerField(default=0)
+    verified = models.BooleanField(null=True, default=None)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
