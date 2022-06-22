@@ -3,6 +3,6 @@ from .views import SentimentAPI
 from rest_framework.routers import DefaultRouter
 
 router = DefaultRouter()
-router.register(r'api', SentimentAPI, basename="api")
+router.register('', SentimentAPI, basename="sentiment")
 
 urlpatterns = router.urls

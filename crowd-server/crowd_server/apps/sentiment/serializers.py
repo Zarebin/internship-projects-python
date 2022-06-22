@@ -11,7 +11,7 @@ class QuestionSerializer(serializers.ModelSerializer):
 class EvaluatedSentimentSerializer(serializers.ModelSerializer):
     class Meta:
         model = EvaluatedSentiment
-        fields = ['question', 'value','user']
+        fields = ['question', 'value', 'user']
 
     def create(self, validated_data):
         question = validated_data['question']
