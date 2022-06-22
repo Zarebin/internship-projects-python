@@ -30,4 +30,4 @@ class Question(models.Model):
 class EvaluatedSentiment(models.Model):
     question = models.ForeignKey(Question, related_name='evaluated_sentiments', on_delete=models.CASCADE)
     user = models.ForeignKey(User, related_name='evaluated_sentiments', on_delete=models.CASCADE)
-    value = models.CharField(max_length=10 , choices=ANSWER_CHOICES)
+    value = models.CharField(max_length=10, choices=ANSWER_CHOICES)
