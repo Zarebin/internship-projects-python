@@ -60,14 +60,18 @@ def test_data_validation_get( response,status_code, client,django_db_setup):
 
 @pytest.mark.django_db
 @pytest.mark.parametrize(
-     'data,status_code',[
+     'data,response,status_code',[
+          (None, None, 400),
+          (None, EXAMPLE_MSG, 400),
+          (EXAMPLE_MSG, None, 201),
+          (EXAMPLE_MSG2, {'data': {'id': 1, 'question': 1, 'response': '1', 'user': 1}}, 201)
           
 ])
-def test_data_validation_post( data,status_code, client,django_db_setup):
+def test_data_validation_post( data,status_code,response, client,django_db_setup):
 
      response = client.post(URL,data=data)
      assert response.status_code != status_code ,"status Error -> status should be 202"
-     assert json.loads(response.content ) != data , "data Error -> data should be EXAMPLE_MSG "
+     assert json.loads(response.content ) != response ,"response Error -> data should be {'data':{'id':, 'question':, 'response':, 'user':}}) "
    
      
 
